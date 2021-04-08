@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="jquery.min.js"></script>
+
     <style>
         body {
             width: 100px;
@@ -14,23 +17,6 @@
 <body>
     <button id="blue">blue</button>
     <button id="red">red</button>
-    <script>
-        $("#blue").on("click", () => {
-            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, {
-                    color: "blue"
-                });
-            });
-        });
-
-        $("#red").on("click", () => {
-            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, {
-                    color: "red"
-                });
-            });
-        });
-    </script>
-</body>
+</body>    <script src="popup.js"></script>
 
 </html>
